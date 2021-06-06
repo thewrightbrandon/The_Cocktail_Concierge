@@ -39,7 +39,7 @@ componentDidMount = () => {
             <div key={drink.id}>
               <h4>{drink.name}</h4>
               <img src={drink.image} alt={drink.name} />
-              <h5>Main-Alcohol: {drink.alcohol}</h5>
+              <h5>Alcohol: {drink.alcohol}</h5>
               <h5>Profile: {drink.profile}</h5>
             </div>
           )
