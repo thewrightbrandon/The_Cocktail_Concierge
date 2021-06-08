@@ -74,7 +74,7 @@ const App = () => {
       drinks.map((drink) => {
       return (
         <div key={drink.id} className="card mt-4 mb-4">
-          <h3 className="card-header"><b>{drink.name}</b></h3>
+          <h2 className="card-header"><b>{drink.name}</b></h2>
           {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
            : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
           <div className="card-body">
@@ -107,7 +107,7 @@ const App = () => {
 
     setDrinksJSX (
       <div className="card lucky-card mt-4 mb-4">
-        <h3 className="card-header"><b>{drinks[index].name}</b></h3>
+        <h2 className="card-header"><b>{drinks[index].name}</b></h2>
         {drinks[index].image.includes('https://') ? <img className="card-img lucky-card-img" src={drinks[index].image} alt={drinks[index].name} />
         : <img className="card-img lucky-card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
         <div className="card-body">
@@ -145,7 +145,7 @@ const App = () => {
       drinksMap = newDrinks.map((drink) => {
         return (
           <div key={drink.id} className="card mt-4 mb-4">
-            <h3 className="card-header"><b>{drink.name}</b></h3>
+            <h2 className="card-header"><b>{drink.name}</b></h2>
             {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
              : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
              <div className="card-body">
@@ -161,7 +161,7 @@ const App = () => {
         drinksMap = drinks.map((drink) => {
           return (
             <div key={drink.id} className="card mt-4 mb-4">
-              <h3 className="card-header"><b>{drink.name}</b></h3>
+              <h2 className="card-header"><b>{drink.name}</b></h2>
               {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
                : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
               <div className="card-body">
@@ -183,20 +183,20 @@ const App = () => {
         <nav className="navbar">
           <ul className="container-fluid navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to='/'>Find a Drink</Link>
+              <Link className="findDrinkButton btn btn-light" to='/'>FIND A DRINK</Link>
             </li>
             <li className='logo nav-item'>
-              <img className='logo-img' src='https://i.imgur.com/xTqvX12.png' alt='logo' />
+              <img className='logo-img' src='https://i.imgur.com/tMypTqT.png' alt='logo' />
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to='/AddDrink'>Add a Drink</Link>
+              <Link className="addDrinkButton btn btn-light" to='/AddDrink'>ADD A DRINK</Link>
             </li>
           </ul>
         </nav>
         <div className="container">
           <Switch>
             <Route exact path='/'>
-              <h1>The Cocktail Concierge</h1>
+              <h1>THE COCKTAIL CONCIERGE</h1>
               <Filter
               filterByType={filterByType}
               handleChange={handleChange}

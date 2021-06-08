@@ -1,11 +1,20 @@
 /* BODY CSS */
 
 body {
+  font-family: 'Roboto', sans-serif;
   background-image: url(https://i.imgur.com/XYBNjVH.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: top;
+}
+
+.btn, input, select, button, h5 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-family: 'Odibee Sans', cursive;
 }
 
 /* NAVBAR */
@@ -28,10 +37,37 @@ body {
   justify-content: space-evenly;
 }
 
+.findDrinkButton, .addDrinkButton {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
 
+.findDrinkButton:hover, .addDrinkButton:hover {
+  background-color: black;
+  color: ghostwhite;
+}
+
+/* HEADERS AND FILTERS */
+
+h1 {
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-weight: bold;
+  text-shadow: 4px 4px rgba(0, 0, 0, 1);
+  color: ghostwhite;
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 3%;
+}
+
+
+
+/* DRINK CARDS */
 
 .drinksDiv {
-  margin-top: 3%;
+  margin: 3% auto;
 }
 
 .card {
@@ -71,8 +107,6 @@ body {
 		box-shadow: none;
 	}
 }
-
-
 
 /* SUPER COOL SCROLL BAR STYLING!!! */
 
@@ -115,7 +149,27 @@ body::-webkit-scrollbar-thumb
 
 /* MEDIA QUERIES */
 
+@media screen and (max-width: 1100px) {
+
+  h1 {
+    font-size: 3.5em;
+  }
+
+}
+
+@media screen and (max-width: 850px) {
+
+  h1 {
+    font-size: 2.8em;
+  }
+
+}
+
 @media screen and (max-width: 700px) {
+
+  h1 {
+    font-size: 2.4em;
+  }
 
   .logo {
     width: 75px;
@@ -132,6 +186,11 @@ body::-webkit-scrollbar-thumb
   		transform: translateY(-5px);
   		box-shadow: none;
   	}
+  }
+
+  .findDrinkButton, .addDrinkButton {
+    font-size: .7em;
+    padding: 5px 10px;
   }
 
 }
