@@ -74,12 +74,12 @@ const App = () => {
       drinks.map((drink) => {
       return (
         <div key={drink.id} className="card mt-4 mb-4">
-          <h4 className="card-header">{drink.name}</h4>
+          <h3 className="card-header"><b>{drink.name}</b></h3>
           {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
            : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
           <div className="card-body">
-            <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
-            <h5 className="card-text">Profile: {drink.profile}</h5>
+            <h5 className="card-text">Made With: <b>{drink.alcohol}</b></h5>
+            <h5 className="card-text">Profile: <b>{drink.profile}</b></h5>
           </div>
           {/*<DeleteDrink
           getDrinks={getDrinks}
@@ -107,12 +107,12 @@ const App = () => {
 
     setDrinksJSX (
       <div className="card lucky-card mt-4 mb-4">
-        <h4 className="card-header">{drinks[index].name}</h4>
+        <h3 className="card-header"><b>{drinks[index].name}</b></h3>
         {drinks[index].image.includes('https://') ? <img className="card-img lucky-card-img" src={drinks[index].image} alt={drinks[index].name} />
         : <img className="card-img lucky-card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
         <div className="card-body">
-          <h5 className="card-text">Alcohol: {drinks[index].alcohol}</h5>
-          <h5 className="card-text">Profile: {drinks[index].profile}</h5>
+          <h5 className="card-text">Made With: <b>{drinks[index].alcohol}</b></h5>
+          <h5 className="card-text">Profile: <b>{drinks[index].profile}</b></h5>
         </div>
         {/*<button onClick={deleteDrink} value={drinks[index].id}>Delete Drink</button>*/}
       </div>
@@ -145,12 +145,12 @@ const App = () => {
       drinksMap = newDrinks.map((drink) => {
         return (
           <div key={drink.id} className="card mt-4 mb-4">
-            <h4 className="card-header">{drink.name}</h4>
+            <h3 className="card-header"><b>{drink.name}</b></h3>
             {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
              : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
              <div className="card-body">
-               <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
-               <h5 className="card-text">Profile: {drink.profile}</h5>
+               <h5 className="card-text">Made With: <b>{drink.alcohol}</b></h5>
+               <h5 className="card-text">Profile: <b>{drink.profile}</b></h5>
              </div>
             {/*<button onClick={deleteDrink} value={drink.id}>Delete Drink</button>*/}
           </div>
@@ -161,12 +161,12 @@ const App = () => {
         drinksMap = drinks.map((drink) => {
           return (
             <div key={drink.id} className="card mt-4 mb-4">
-              <h4 className="card-header">{drink.name}</h4>
+              <h3 className="card-header"><b>{drink.name}</b></h3>
               {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
                : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
               <div className="card-body">
-                <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
-                <h5 className="card-text">Profile: {drink.profile}</h5>
+                <h5 className="card-text">Made With: <b>{drink.alcohol}</b></h5>
+                <h5 className="card-text">Profile: <b>{drink.profile}</b></h5>
               </div>
               {/*<button onClick={deleteDrink} value={drink.id}>Delete Drink</button>*/}
             </div>
@@ -184,6 +184,9 @@ const App = () => {
           <ul className="container-fluid navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to='/'>Find a Drink</Link>
+            </li>
+            <li className='logo nav-item'>
+              <img className='logo-img' src='https://i.imgur.com/xTqvX12.png' alt='logo' />
             </li>
             <li className="nav-item">
               <Link className="nav-link" to='/AddDrink'>Add a Drink</Link>
@@ -211,7 +214,7 @@ const App = () => {
           </Switch>
         </div>
       </div>
-    </BrowserRouter>  
+    </BrowserRouter>
   )
 
 }

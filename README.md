@@ -46,7 +46,7 @@ Check out the live app: [The Cocktail Concierge App!](https://the-cocktail-conci
 -
 -   
 -
--
+- When user scrolls through the drinks and then selects a new filter, the scroll bar will stay in the position that it was left from the previous search.
 
 ## Gists
 Approach before creating repos: [Github Gist](https://gist.github.com/thewrightbrandon/f0dd64b806bb0bfc78d0aeb0958cc506)
