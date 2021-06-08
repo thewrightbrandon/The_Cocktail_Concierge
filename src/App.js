@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useCallback } from 'react'
+import React, {useState, useEffect } from 'react'
 import axios from 'axios'
 
 import AddDrink from './components/AddDrink'
-import DeleteDrink from './components/DeleteDrink'
+// import DeleteDrink from './components/DeleteDrink'
 import Filter from './components/Filter'
 
 const App = () => {
@@ -13,15 +13,14 @@ const App = () => {
   const [filterType, setFilterType] = useState('')
   const [drinksJSX, setDrinksJSX] = useState(null)
 
-  const [, updateState] = useState();
-  const forceUpdate = useCallback(() => updateState({}), [])
-
 
   const filterByType = (event) => {
     event.preventDefault()
     const filteredDrinks = []
     for (let i = 0; i < drinks.length; i++) {
-      if (drinks[i].alcohol === filterType.filterType) {
+      if (filterType.filterType === "") {
+        return allDrinks()
+      } else if (drinks[i].alcohol === filterType.filterType) {
         filteredDrinks.push(drinks[i])
         // console.log(filteredDrinks)
       }
@@ -71,14 +70,17 @@ const App = () => {
     setDrinksJSX(
       drinks.map((drink) => {
       return (
-        <div key={drink.id}>
-          <h4>{drink.name}</h4>
-          <img src={drink.image} alt={drink.name} />
-          <h5>Alcohol: {drink.alcohol}</h5>
-          <h5>Profile: {drink.profile}</h5>
-          <DeleteDrink
+        <div key={drink.id} className="card mt-4 mb-4">
+          <h4 className="card-header">{drink.name}</h4>
+          {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
+           : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
+          <div className="card-body">
+            <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
+            <h5 className="card-text">Profile: {drink.profile}</h5>
+          </div>
+          {/*<DeleteDrink
           getDrinks={getDrinks}
-          drink={drink} />
+          drink={drink} />*/}
         </div>
       )}
     ))
@@ -87,26 +89,29 @@ const App = () => {
 
   const feelingLucky = () => {
 
-    const deleteDrink = (event) => {
-      axios
-        .delete('https://cocktail-concierge.herokuapp.com/drinks/' + event.target.value)
-        .then(
-          (response) => {
-            forceUpdate()
-            getDrinks()
-          }
-        )
-    }
+    // const deleteDrink = (event) => {
+    //   axios
+    //     .delete('https://cocktail-concierge.herokuapp.com/drinks/' + event.target.value)
+    //     .then(
+    //       (response) => {
+    //         forceUpdate()
+    //         getDrinks()
+    //       }
+    //     )
+    // }
 
     const index = Math.floor(Math.random() * drinks.length)
 
     setDrinksJSX (
-      <div>
-        <h4>{drinks[index].name}</h4>
-        <img src={drinks[index].image} alt={drinks[index].name} />
-        <h5>Alcohol: {drinks[index].alcohol}</h5>
-        <h5>Profile: {drinks[index].profile}</h5>
-        <button onClick={deleteDrink} value={drinks[index].id}>Delete Drink</button>
+      <div className="card lucky-card mt-4 mb-4">
+        <h4 className="card-header">{drinks[index].name}</h4>
+        {drinks[index].image.includes('https://') ? <img className="card-img lucky-card-img" src={drinks[index].image} alt={drinks[index].name} />
+        : <img className="card-img lucky-card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
+        <div className="card-body">
+          <h5 className="card-text">Alcohol: {drinks[index].alcohol}</h5>
+          <h5 className="card-text">Profile: {drinks[index].profile}</h5>
+        </div>
+        {/*<button onClick={deleteDrink} value={drinks[index].id}>Delete Drink</button>*/}
       </div>
     )
 
@@ -120,28 +125,31 @@ const App = () => {
 
   useEffect(() => {
 
-    const deleteDrink = (event) => {
-      axios
-        .delete('https://cocktail-concierge.herokuapp.com/drinks/' + event.target.value)
-        .then(
-          (response) => {
-            getDrinks()
-            setNewDrinks(null)
-          }
-        )
-    }
+    // const deleteDrink = (event) => {
+    //   axios
+    //     .delete('https://cocktail-concierge.herokuapp.com/drinks/' + event.target.value)
+    //     .then(
+    //       (response) => {
+    //         getDrinks()
+    //         setNewDrinks(null)
+    //       }
+    //     )
+    // }
 
     let drinksMap
 
     if (newDrinks !== null) {
       drinksMap = newDrinks.map((drink) => {
         return (
-          <div key={drink.id}>
-            <h4>{drink.name}</h4>
-            <img src={drink.image} alt={drink.name} />
-            <h5>Alcohol: {drink.alcohol}</h5>
-            <h5>Profile: {drink.profile}</h5>
-            <button onClick={deleteDrink} value={drink.id}>Delete Drink</button>
+          <div key={drink.id} className="card mt-4 mb-4">
+            <h4 className="card-header">{drink.name}</h4>
+            {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
+             : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
+             <div className="card-body">
+               <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
+               <h5 className="card-text">Profile: {drink.profile}</h5>
+             </div>
+            {/*<button onClick={deleteDrink} value={drink.id}>Delete Drink</button>*/}
           </div>
         )}
       )
@@ -149,12 +157,15 @@ const App = () => {
     } else {
         drinksMap = drinks.map((drink) => {
           return (
-            <div key={drink.id}>
-              <h4>{drink.name}</h4>
-              <img src={drink.image} alt={drink.name} />
-              <h5>Alcohol: {drink.alcohol}</h5>
-              <h5>Profile: {drink.profile}</h5>
-              <button onClick={deleteDrink} value={drink.id}>Delete Drink</button>
+            <div key={drink.id} className="card mt-4 mb-4">
+              <h4 className="card-header">{drink.name}</h4>
+              {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
+               : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
+              <div className="card-body">
+                <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
+                <h5 className="card-text">Profile: {drink.profile}</h5>
+              </div>
+              {/*<button onClick={deleteDrink} value={drink.id}>Delete Drink</button>*/}
             </div>
           )}
         )
@@ -173,7 +184,11 @@ const App = () => {
       feelingLucky={feelingLucky} />
       <AddDrink addDrink={addDrink} />
       <div>
-        {drinksJSX}
+        <div className="container-fluid drinksDiv">
+          <div className="row flex-row flex-nowrap overflow-auto">
+            {drinksJSX}
+          </div>
+        </div>
       </div>
     </div>
   )
