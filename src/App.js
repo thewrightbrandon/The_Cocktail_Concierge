@@ -1,4 +1,7 @@
 import React, {useState, useEffect } from 'react'
+
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+
 import axios from 'axios'
 
 import AddDrink from './components/AddDrink'
@@ -175,22 +178,40 @@ const App = () => {
 
 
   return (
-    <div className="container">
-      <h1>The Cocktail Concierge</h1>
-      <Filter
-      filterByType={filterByType}
-      handleChange={handleChange}
-      allDrinks={allDrinks}
-      feelingLucky={feelingLucky} />
-      <AddDrink addDrink={addDrink} />
+    <BrowserRouter>
       <div>
-        <div className="container-fluid drinksDiv">
-          <div className="row flex-row flex-nowrap overflow-auto">
-            {drinksJSX}
-          </div>
+        <nav className="navbar">
+          <ul className="container-fluid navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to='/'>Find a Drink</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to='/AddDrink'>Add a Drink</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="container">
+          <Switch>
+            <Route exact path='/'>
+              <h1>The Cocktail Concierge</h1>
+              <Filter
+              filterByType={filterByType}
+              handleChange={handleChange}
+              allDrinks={allDrinks}
+              feelingLucky={feelingLucky} />
+              <div className="container-fluid drinksDiv">
+                <div className="row flex-row flex-nowrap overflow-auto">
+                  {drinksJSX}
+                </div>
+              </div>
+            </Route>
+            <Route path='/AddDrink'>
+              <AddDrink addDrink={addDrink} />
+            </Route>
+          </Switch>
         </div>
       </div>
-    </div>
+    </BrowserRouter>  
   )
 
 }
