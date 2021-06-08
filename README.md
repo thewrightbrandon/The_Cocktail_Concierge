@@ -47,3 +47,6 @@ Check out the live app: [The Cocktail Concierge App!](https://the-cocktail-conci
 -   
 -
 -
+
+## Gists
+Approach before creating repos: [Github Gist](https://gist.github.com/thewrightbrandon/f0dd64b806bb0bfc78d0aeb0958cc506)
