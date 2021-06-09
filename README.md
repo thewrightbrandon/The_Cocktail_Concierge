@@ -42,7 +42,7 @@ Check out the live app: [The Cocktail Concierge App!](https://the-cocktail-conci
 -
 
 ## Unsolved Problems / Future Updates
--   
+- Create a landing / home page that explains the app. 
 -
 -   
 - Flip card feature that will reveal cocktail recipe on the back.
