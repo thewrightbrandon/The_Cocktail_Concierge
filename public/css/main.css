@@ -59,15 +59,93 @@ h1 {
   color: ghostwhite;
   text-align: center;
   font-size: 5em;
-  margin-bottom: 3%;
+  margin-bottom: 1%;
 }
 
+#headingH2 {
+  font-size: 2.4em;
+  text-shadow: 4px 4px rgba(0, 0, 0, 1);
+  margin-bottom: 3%;
+  color: ghostwhite;
+  text-align: center;
+}
 
+#headingH3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em;
+  width: 75%;
+  margin: 0 auto 1%;
+  text-align: center;
+  background-color: black;
+  color: ghostwhite;
+  border: 3px solid ghostwhite;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  max-width: 700px;
+}
+
+.filterByTypeDiv {
+  margin: 0 auto;
+  margin-bottom: 1%;
+}
+
+.filterByType {
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.form-select:focus {
+  border-color: ghostwhite;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
+#filterDrinksButtonDiv {
+  display: flex;
+}
+
+.filterDrinksButton {
+  margin: 0 auto;
+  margin-bottom: 3%;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+#feelingLuckyButtonDiv, #allDrinksButtonDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.allDrinksButton {
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.feelingLuckyButton {
+  margin-bottom: 3%;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.filterDrinksButton:hover, .allDrinksButton:hover, .feelingLuckyButton:hover {
+  background-color: black;
+  color: ghostwhite;
+}
 
 /* DRINK CARDS */
 
 .drinksDiv {
-  margin: 3% auto;
+  display: flex;
+  justify-content: center;
+  margin: 2% auto;
 }
 
 .card {
@@ -155,6 +233,14 @@ body::-webkit-scrollbar-thumb
     font-size: 3.5em;
   }
 
+  #headingH2 {
+    font-size: 2.0em;
+  }
+
+  #headingH3 {
+    font-size: 1.1em;
+  }
+
 }
 
 @media screen and (max-width: 850px) {
@@ -163,12 +249,28 @@ body::-webkit-scrollbar-thumb
     font-size: 2.8em;
   }
 
+  #headingH2 {
+    font-size: 1.6em;
+  }
+
+  #headingH3 {
+    font-size: .9em;
+  }
+
 }
 
 @media screen and (max-width: 700px) {
 
   h1 {
     font-size: 2.4em;
+  }
+
+  #headingH2 {
+    font-size: 1.4em;
+  }
+
+  #headingH3 {
+    font-size: .7em;
   }
 
   .logo {
@@ -189,8 +291,16 @@ body::-webkit-scrollbar-thumb
   }
 
   .findDrinkButton, .addDrinkButton {
-    font-size: .7em;
+    font-size: .8em;
     padding: 5px 10px;
+  }
+
+  .feelingLuckyButton {
+    font-size: 1em;
+  }
+
+  .filterDrinksButton, .allDrinksButton {
+    font-size: .8em;
   }
 
 }
@@ -199,6 +309,14 @@ body::-webkit-scrollbar-thumb
 
   .logo {
     width: 200px;
+  }
+
+  .feelingLuckyButton {
+    font-size: 1.6em;
+  }
+
+  .filterDrinksButton, .allDrinksButton {
+    font-size: 1.4em;
   }
 
 }

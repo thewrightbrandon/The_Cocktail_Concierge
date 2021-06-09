@@ -45,7 +45,7 @@ Check out the live app: [The Cocktail Concierge App!](https://the-cocktail-conci
 -   
 -
 -   
--
+- Flip card feature that will reveal cocktail recipe on the back.
 - When user scrolls through the drinks and then selects a new filter, the scroll bar will stay in the position that it was left from the previous search.
 
 ## Gists

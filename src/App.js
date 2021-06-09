@@ -197,6 +197,8 @@ const App = () => {
           <Switch>
             <Route exact path='/'>
               <h1>THE COCKTAIL CONCIERGE</h1>
+              <h3 id="headingH3">Pull Up a Stool - Order With Ease - Sip With Confidence</h3>
+              <h2 id="headingH2">A Handy-Dandy Guide for the Indecisive</h2>
               <Filter
               filterByType={filterByType}
               handleChange={handleChange}
