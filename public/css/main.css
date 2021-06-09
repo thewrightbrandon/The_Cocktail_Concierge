@@ -1,5 +1,159 @@
+/* BODY CSS */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(https://i.imgur.com/XYBNjVH.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+}
+
+.btn, input, select, button, h5 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-family: 'Odibee Sans', cursive;
+}
+
+/* NAVBAR */
+
+.logo {
+  width: 150px;
+}
+
+.logo-img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar-nav {
+  width: 80%;
+  max-width: 800px;
+  padding: 10px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+
+.findDrinkButton, .addDrinkButton {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.findDrinkButton:hover, .addDrinkButton:hover {
+  background-color: black;
+  color: ghostwhite;
+}
+
+/* HEADERS AND FILTERS */
+
+h1 {
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-weight: bold;
+  text-shadow: 4px 4px rgba(0, 0, 0, 1);
+  color: ghostwhite;
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 1%;
+}
+
+#headingH2 {
+  font-size: 2.4em;
+  text-shadow: 4px 4px rgba(0, 0, 0, 1);
+  margin-bottom: 3%;
+  color: ghostwhite;
+  text-align: center;
+}
+
+#headingH3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em;
+  width: 75%;
+  margin: 0 auto 1%;
+  text-align: center;
+  background-color: black;
+  color: ghostwhite;
+  border: 3px solid ghostwhite;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  max-width: 700px;
+}
+
+.filterByTypeDiv {
+  margin: 0 auto;
+  margin-bottom: 1%;
+}
+
+.filterByType {
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.form-select:focus {
+  border-color: ghostwhite;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
+#filterDrinksButtonDiv {
+  display: flex;
+}
+
+.filterDrinksButton {
+  margin: 0 auto;
+  margin-bottom: 3%;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+#feelingLuckyButtonDiv, #allDrinksButtonDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.allDrinksButton {
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.feelingLuckyButton {
+  margin-bottom: 3%;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.filterDrinksButton:hover, .allDrinksButton:hover, .feelingLuckyButton:hover {
+  background-color: black;
+  color: ghostwhite;
+}
+
+/* DRINK CARDS */
+
 .drinksDiv {
-  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  margin: 2% auto;
+}
+
+.card {
+  width: 18rem;
+  padding: 0;
+  margin: 0 2% 0 0;
+  border: 3px solid black;
+  box-sizing: border-box;
 }
 
 .card-img {
@@ -15,18 +169,12 @@
   height: auto;
   object-fit: contain;
   object-position: top;
-  margin: 6% auto 0;
-}
-
-.card {
-  width: 18rem;
-  padding: 0;
-  margin: 0 1%;
+  margin: 6% auto 2%;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 4px 4px 1px rgba(0, 0, 0, .7);
+  box-shadow: 5px 5px 1px rgba(0, 0, 0, 1);
 }
 
 .lucky-card {
@@ -37,8 +185,6 @@
 		box-shadow: none;
 	}
 }
-
-
 
 /* SUPER COOL SCROLL BAR STYLING!!! */
 
@@ -76,4 +222,101 @@ body::-webkit-scrollbar-thumb
 {
 	background-color: #000000;
 	border: 2px solid #555555;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1100px) {
+
+  h1 {
+    font-size: 3.5em;
+  }
+
+  #headingH2 {
+    font-size: 2.0em;
+  }
+
+  #headingH3 {
+    font-size: 1.1em;
+  }
+
+}
+
+@media screen and (max-width: 850px) {
+
+  h1 {
+    font-size: 2.8em;
+  }
+
+  #headingH2 {
+    font-size: 1.6em;
+  }
+
+  #headingH3 {
+    font-size: .9em;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+  h1 {
+    font-size: 2.4em;
+  }
+
+  #headingH2 {
+    font-size: 1.4em;
+  }
+
+  #headingH3 {
+    font-size: .7em;
+  }
+
+  .logo {
+    width: 75px;
+  }
+
+  .card {
+    width: 16rem;
+  }
+
+  .lucky-card {
+    width: 28rem;
+    margin: 0 auto;
+    &:hover{
+  		transform: translateY(-5px);
+  		box-shadow: none;
+  	}
+  }
+
+  .findDrinkButton, .addDrinkButton {
+    font-size: .8em;
+    padding: 5px 10px;
+  }
+
+  .feelingLuckyButton {
+    font-size: 1em;
+  }
+
+  .filterDrinksButton, .allDrinksButton {
+    font-size: .8em;
+  }
+
+}
+
+@media screen and (min-width: 1400px) {
+
+  .logo {
+    width: 200px;
+  }
+
+  .feelingLuckyButton {
+    font-size: 1.6em;
+  }
+
+  .filterDrinksButton, .allDrinksButton {
+    font-size: 1.4em;
+  }
+
 }

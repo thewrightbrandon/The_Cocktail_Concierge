@@ -1,4 +1,7 @@
 import React, {useState, useEffect } from 'react'
+
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+
 import axios from 'axios'
 
 import AddDrink from './components/AddDrink'
@@ -71,12 +74,12 @@ const App = () => {
       drinks.map((drink) => {
       return (
         <div key={drink.id} className="card mt-4 mb-4">
-          <h4 className="card-header">{drink.name}</h4>
+          <h2 className="card-header"><b>{drink.name}</b></h2>
           {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
            : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
           <div className="card-body">
-            <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
-            <h5 className="card-text">Profile: {drink.profile}</h5>
+            <h5 className="card-text">Made With: <b>{drink.alcohol}</b></h5>
+            <h5 className="card-text">Profile: <b>{drink.profile}</b></h5>
           </div>
           {/*<DeleteDrink
           getDrinks={getDrinks}
@@ -104,12 +107,12 @@ const App = () => {
 
     setDrinksJSX (
       <div className="card lucky-card mt-4 mb-4">
-        <h4 className="card-header">{drinks[index].name}</h4>
+        <h2 className="card-header"><b>{drinks[index].name}</b></h2>
         {drinks[index].image.includes('https://') ? <img className="card-img lucky-card-img" src={drinks[index].image} alt={drinks[index].name} />
         : <img className="card-img lucky-card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
         <div className="card-body">
-          <h5 className="card-text">Alcohol: {drinks[index].alcohol}</h5>
-          <h5 className="card-text">Profile: {drinks[index].profile}</h5>
+          <h5 className="card-text">Made With: <b>{drinks[index].alcohol}</b></h5>
+          <h5 className="card-text">Profile: <b>{drinks[index].profile}</b></h5>
         </div>
         {/*<button onClick={deleteDrink} value={drinks[index].id}>Delete Drink</button>*/}
       </div>
@@ -142,12 +145,12 @@ const App = () => {
       drinksMap = newDrinks.map((drink) => {
         return (
           <div key={drink.id} className="card mt-4 mb-4">
-            <h4 className="card-header">{drink.name}</h4>
+            <h2 className="card-header"><b>{drink.name}</b></h2>
             {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
              : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
              <div className="card-body">
-               <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
-               <h5 className="card-text">Profile: {drink.profile}</h5>
+               <h5 className="card-text">Made With: <b>{drink.alcohol}</b></h5>
+               <h5 className="card-text">Profile: <b>{drink.profile}</b></h5>
              </div>
             {/*<button onClick={deleteDrink} value={drink.id}>Delete Drink</button>*/}
           </div>
@@ -158,12 +161,12 @@ const App = () => {
         drinksMap = drinks.map((drink) => {
           return (
             <div key={drink.id} className="card mt-4 mb-4">
-              <h4 className="card-header">{drink.name}</h4>
+              <h2 className="card-header"><b>{drink.name}</b></h2>
               {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
                : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
               <div className="card-body">
-                <h5 className="card-text">Alcohol: {drink.alcohol}</h5>
-                <h5 className="card-text">Profile: {drink.profile}</h5>
+                <h5 className="card-text">Made With: <b>{drink.alcohol}</b></h5>
+                <h5 className="card-text">Profile: <b>{drink.profile}</b></h5>
               </div>
               {/*<button onClick={deleteDrink} value={drink.id}>Delete Drink</button>*/}
             </div>
@@ -175,22 +178,45 @@ const App = () => {
 
 
   return (
-    <div className="container">
-      <h1>The Cocktail Concierge</h1>
-      <Filter
-      filterByType={filterByType}
-      handleChange={handleChange}
-      allDrinks={allDrinks}
-      feelingLucky={feelingLucky} />
-      <AddDrink addDrink={addDrink} />
+    <BrowserRouter>
       <div>
-        <div className="container-fluid drinksDiv">
-          <div className="row flex-row flex-nowrap overflow-auto">
-            {drinksJSX}
-          </div>
+        <nav className="navbar">
+          <ul className="container-fluid navbar-nav">
+            <li className="nav-item">
+              <Link className="findDrinkButton btn btn-light" to='/'>FIND A DRINK</Link>
+            </li>
+            <li className='logo nav-item'>
+              <img className='logo-img' src='https://i.imgur.com/tMypTqT.png' alt='logo' />
+            </li>
+            <li className="nav-item">
+              <Link className="addDrinkButton btn btn-light" to='/AddDrink'>ADD A DRINK</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="container">
+          <Switch>
+            <Route exact path='/'>
+              <h1>THE COCKTAIL CONCIERGE</h1>
+              <h3 id="headingH3">Pull Up a Stool - Order With Ease - Sip With Confidence</h3>
+              <h2 id="headingH2">A Handy-Dandy Guide for the Indecisive</h2>
+              <Filter
+              filterByType={filterByType}
+              handleChange={handleChange}
+              allDrinks={allDrinks}
+              feelingLucky={feelingLucky} />
+              <div className="container-fluid drinksDiv">
+                <div className="row flex-row flex-nowrap overflow-auto">
+                  {drinksJSX}
+                </div>
+              </div>
+            </Route>
+            <Route path='/AddDrink'>
+              <AddDrink addDrink={addDrink} />
+            </Route>
+          </Switch>
         </div>
       </div>
-    </div>
+    </BrowserRouter>
   )
 
 }

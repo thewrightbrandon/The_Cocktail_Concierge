@@ -6,21 +6,28 @@ const Filter = (props) => {
   return (
     <>
       <div className="filterDiv">
+        <div id="feelingLuckyButtonDiv">
+          <button className="btn btn-light feelingLuckyButton" onClick={props.feelingLucky}>SHAKE IT UP!</button>
+        </div>
         <form className="filterForm" onSubmit={props.filterByType}>
-          <select className="form-select" type="text" id="filterType" onChange={props.handleChange}>
-            <option value="">Choose Your Spirit</option>
-            <option value="Gin">Gin</option>
-            <option value="Rum">Rum</option>
-            <option value="Tequila">Tequila</option>
-            <option value="Vodka">Vodka</option>
-            <option value="Whiskey">Whiskey</option>
-          </select>
-          <input className="btn" type="submit" value="Filter Drinks" />
+          <div className="filterByTypeDiv col-6">
+            <select className="filterByType form-select form-select-md mb-2 col-6" type="text" id="filterType" onChange={props.handleChange}>
+              <option value="">Choose Your Spirit</option>
+              <option value="Gin">Gin</option>
+              <option value="Rum">Rum</option>
+              <option value="Tequila">Tequila</option>
+              <option value="Vodka">Vodka</option>
+              <option value="Whiskey">Whiskey</option>
+            </select>
+          </div>
+          <div id="filterDrinksButtonDiv">
+            <input className="btn btn-light filterDrinksButton" type="submit" value="SUBMIT FILTER" />
+          </div>
         </form>
       </div>
-      <button onClick={props.allDrinks}>See All Drinks</button>
-      <br />
-      <button onClick={props.feelingLucky}>I Am Feeling Lucky!</button>
+      <div id="allDrinksButtonDiv">
+        <button className="btn btn-light allDrinksButton" onClick={props.allDrinks}>SEE ALL DRINKS</button>
+      </div>
     </>
   )
 
