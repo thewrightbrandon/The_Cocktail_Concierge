@@ -10,12 +10,10 @@ import Filter from './components/Filter'
 
 const App = () => {
 
-
   const [drinks, setDrinks] = useState([])
   const [newDrinks, setNewDrinks] = useState(null)
   const [filterType, setFilterType] = useState('')
   const [drinksJSX, setDrinksJSX] = useState(null)
-
 
   const filterByType = (event) => {
     event.preventDefault()
@@ -31,11 +29,9 @@ const App = () => {
     setNewDrinks(filteredDrinks)
   }
 
-
   const handleChange = (event) => {
     setFilterType({ [event.target.id]: event.target.value })
   }
-
 
   const getDrinks = () => {
     axios
@@ -53,7 +49,6 @@ const App = () => {
       })
   }
 
-
   const addDrink = (drink) => {
     axios
       .post('https://cocktail-concierge.herokuapp.com/drinks', drink)
@@ -66,7 +61,6 @@ const App = () => {
         }
       )
   }
-
 
   const allDrinks = () => {
 
@@ -88,7 +82,6 @@ const App = () => {
       )}
     ))
   }
-
 
   const feelingLucky = () => {
 
@@ -120,11 +113,9 @@ const App = () => {
 
   }
 
-
   useEffect(() => {
     getDrinks()
   },[])
-
 
   useEffect(() => {
 
@@ -175,7 +166,6 @@ const App = () => {
         setDrinksJSX(drinksMap)
     }
   },[newDrinks, drinks])
-
 
   return (
     <BrowserRouter>

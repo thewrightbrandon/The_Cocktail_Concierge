@@ -1,4 +1,4 @@
-/* BODY CSS */
+/* BODY CSS & FONTS */
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -9,11 +9,11 @@ body {
   background-position: top;
 }
 
-.btn, input, select, button, h5 {
+.btn, input, select, button, label, h5 {
   font-family: 'Roboto', sans-serif;
 }
 
-h2 {
+h2, legend {
   font-family: 'Odibee Sans', cursive;
 }
 
@@ -151,7 +151,7 @@ h1 {
 .card {
   width: 18rem;
   padding: 0;
-  margin: 0 2% 0 0;
+  margin-right: 2%;
   border: 3px solid black;
   box-sizing: border-box;
 }
@@ -184,6 +184,75 @@ h1 {
 		transform: translateY(-5px);
 		box-shadow: none;
 	}
+}
+
+/* ADD FORM */
+
+.addDrinkForm {
+  max-width: 950px;
+  margin: 5% auto;
+}
+
+fieldset {
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, .9);
+  width: 100%;
+}
+
+legend {
+  float: none;
+  padding: 0 30px;
+  margin: 0;
+  border: 3px solid ghostwhite;
+  border-radius: 5px;
+  background-color: black;
+  color: ghostwhite;
+  width: auto;
+  font-size: 2em;
+  text-align: right;
+}
+
+input.form-control:focus, input.form-select:focus, input[type=text]:focus, input[type=password]:focus,
+input.form-control:active, input.form-select:active, input[type=text]:active, input[type=password]:active,
+button, .btn:active {
+  border: 2px solid black;
+  box-shadow: none;
+  outline: none;
+}
+
+.form-label {
+  color: black;
+  font-weight: bold;
+}
+
+.form-control, .form-select {
+  border: 3px solid black;
+}
+
+.addRow {
+  display: flex;
+  justify-content: center;
+}
+
+#submitDrinkButtonDiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5%;
+}
+
+.submitDrinkButton {
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.submitDrinkButton:hover {
+  background-color: black;
+  color: ghostwhite;
 }
 
 /* SUPER COOL SCROLL BAR STYLING!!! */
@@ -295,7 +364,7 @@ body::-webkit-scrollbar-thumb
     padding: 5px 10px;
   }
 
-  .feelingLuckyButton {
+  .feelingLuckyButton, .submitDrinkButton {
     font-size: 1em;
   }
 
