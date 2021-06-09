@@ -11,7 +11,8 @@ const Filter = (props) => {
         </div>
         <form className="filterForm" onSubmit={props.filterByType}>
           <div className="filterByTypeDiv col-6">
-            <select className="filterByType form-select form-select-md mb-2 col-6" type="text" id="filterType" onChange={props.handleChange}>
+            <select className="filterByType form-select form-select-md mb-2 col-6"
+            type="text" id="filterType" onChange={props.handleChange}>
               <option value="">Choose Your Spirit</option>
               <option value="Gin">Gin</option>
               <option value="Rum">Rum</option>

@@ -41,7 +41,7 @@ const AddDrink = (props) => {
             <div className="col-10">
               <label className="form-label" htmlFor="name">NAME</label>
               <input className="form-control" id="name" type="text" name="name"
-              value={drink.name} onChange={handleChange} required />
+              value={drink.name} onChange={handleChange} maxLength="23" required />
             </div>
           </div>
           <div className="row mb-4 addRow">

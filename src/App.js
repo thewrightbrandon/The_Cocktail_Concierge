@@ -12,8 +12,10 @@ const App = () => {
 
   const [drinks, setDrinks] = useState([])
   const [newDrinks, setNewDrinks] = useState(null)
-  const [filterType, setFilterType] = useState('')
+  const [filterType, setFilterType] = useState({filterType: ""})
   const [drinksJSX, setDrinksJSX] = useState(null)
+
+
 
   const filterByType = (event) => {
     event.preventDefault()
@@ -68,7 +70,7 @@ const App = () => {
       drinks.map((drink) => {
       return (
         <div key={drink.id} className="card mt-4 mb-4">
-          <h2 className="card-header"><b>{drink.name}</b></h2>
+          <h2 className="card-header cardH2"><b>{drink.name}</b></h2>
           {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
            : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
           <div className="card-body">
@@ -100,7 +102,7 @@ const App = () => {
 
     setDrinksJSX (
       <div className="card lucky-card mt-4 mb-4">
-        <h2 className="card-header"><b>{drinks[index].name}</b></h2>
+        <h2 className="card-header cardH2"><b>{drinks[index].name}</b></h2>
         {drinks[index].image.includes('https://') ? <img className="card-img lucky-card-img" src={drinks[index].image} alt={drinks[index].name} />
         : <img className="card-img lucky-card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
         <div className="card-body">
@@ -136,7 +138,7 @@ const App = () => {
       drinksMap = newDrinks.map((drink) => {
         return (
           <div key={drink.id} className="card mt-4 mb-4">
-            <h2 className="card-header"><b>{drink.name}</b></h2>
+            <h2 className="card-header cardH2"><b>{drink.name}</b></h2>
             {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
              : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
              <div className="card-body">
@@ -152,7 +154,7 @@ const App = () => {
         drinksMap = drinks.map((drink) => {
           return (
             <div key={drink.id} className="card mt-4 mb-4">
-              <h2 className="card-header"><b>{drink.name}</b></h2>
+              <h2 className="card-header cardH2"><b>{drink.name}</b></h2>
               {drink.image.includes('https://') ? <img className="card-img" src={drink.image} alt={drink.name} />
                : <img className="card-img" src="https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg" alt="Not Found" />}
               <div className="card-body">
