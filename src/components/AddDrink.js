@@ -18,6 +18,8 @@ const AddDrink = (props) => {
     setDrink({ ...drink, [event.target.name]: event.target.value })
   }
 
+  let history = useHistory()
+
   const handleSubmit = (event) => {
     event.preventDefault()
     props.addDrink(drink)
@@ -27,14 +29,10 @@ const AddDrink = (props) => {
       profile: '',
       image: ''
     })
-  }
-
-  let history = useHistory()
-
-  const handleClick = (event) => {
-    handleSubmit(event)
     history.push('/')
   }
+
+
 
   return (
     <div className="addDrinkForm">
@@ -82,7 +80,7 @@ const AddDrink = (props) => {
             </div>
           </div>
           <div id="submitDrinkButtonDiv">
-            <input className="btn btn-light submitDrinkButton" type="submit" value="Add Drink" onClick={handleClick} />
+            <input className="btn btn-light submitDrinkButton" type="submit" value="Add Drink" />
           </div>
         </fieldset>
       </form>
