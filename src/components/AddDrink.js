@@ -32,8 +32,6 @@ const AddDrink = (props) => {
     history.push('/')
   }
 
-
-
   return (
     <div className="addDrinkForm">
       <form onSubmit={handleSubmit}>
