@@ -15,8 +15,6 @@ const App = () => {
   const [filterType, setFilterType] = useState({filterType: ""})
   const [drinksJSX, setDrinksJSX] = useState(null)
 
-
-
   const filterByType = (event) => {
     event.preventDefault()
     const filteredDrinks = []
