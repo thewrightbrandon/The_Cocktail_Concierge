@@ -5,6 +5,9 @@
 ## Backend Repository
 Check out the backend repo: [Backend Repository](https://github.com/thewrightbrandon/Cocktail_Concierge_Backend)
 
+## Backend Repository
+Check out the backend repo: [Backend Repository](https://github.com/thewrightbrandon/Cocktail_Concierge_Backend)
+
 ## Explanation of App
 The Cocktail Concierge was created for the indecisive bar patron. This app will assist the user in discovering new cocktails and potentially their new go-to drink. The user will be able to use a variety of filters that will allow them to pinpoint a cocktail that they would enjoy! At this stage of development the user can also add their own favorite drinks to the list. The Cocktail Concierge is still in the early development phase and we will continue to add new features and functionality. This project was an insightful exercise on learning new technologies outside of a classroom environment.  
 
