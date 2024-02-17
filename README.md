@@ -1,5 +1,9 @@
 # The Cocktail Concierge
-Check out the live app: [The Cocktail Concierge App!](https://the-cocktail-concierge.herokuapp.com/)
+
+**LIVE APP NOT SUPPORTED AT THIS TIME**
+
+## Backend Repository
+Check out the backend repo: [Backend Repository](https://github.com/thewrightbrandon/Cocktail_Concierge_Backend)
 
 ## Explanation of App
 The Cocktail Concierge was created for the indecisive bar patron. This app will assist the user in discovering new cocktails and potentially their new go-to drink. The user will be able to use a variety of filters that will allow them to pinpoint a cocktail that they would enjoy! At this stage of development the user can also add their own favorite drinks to the list. The Cocktail Concierge is still in the early development phase and we will continue to add new features and functionality. This project was an insightful exercise on learning new technologies outside of a classroom environment.  
@@ -11,9 +15,6 @@ The Cocktail Concierge was created for the indecisive bar patron. This app will 
 - As a User, I want to be able to choose a spirit from the dropdown menu and receive a list of drinks that matches the selected filter.
 - As a User, I want to be able to click the "See All Drinks" button and receive the full list of drinks.
 - As a User, I want to be able to add a drink to the list and be redirected back to the "Find A Drink" page.
-
-## Backend / API Reference
-[Drinks API](https://cocktail-concierge.herokuapp.com/drinks)
 
 ## Technologies Used
 
